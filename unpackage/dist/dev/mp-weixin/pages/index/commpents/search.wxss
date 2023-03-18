@@ -1,3 +1,6 @@
+.active {
+  background-color: #fbae22 !important;
+}
 .section-nav {
   display: flex;
   align-items: center;
@@ -33,21 +36,44 @@
   padding: 12rpx 60rpx;
   font-size: 32rpx;
 }
-.section-swiper .swiper-item {
+.section-swiper swiper {
+  height: 320rpx !important;
+}
+.section-swiper swiper .swiper-item {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
-.section-swiper .swiper-item .conteng-img {
+.section-swiper swiper .swiper-item .conteng-img {
   width: calc((100% / 5) - 12px) !important;
-  margin: 6px;
+  margin: 12rpx;
   text-align: center;
 }
-.section-swiper .swiper-item .conteng-img .uploadimg {
-  width: 60rpx;
-  height: 60rpx;
+.section-swiper swiper .swiper-item .conteng-img .uploadimg {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 0 10rpx;
 }
-.section-swiper .swiper-item .conteng-img text {
+.section-swiper swiper .swiper-item .conteng-img text {
   display: block;
+  padding-top: 10rpx;
   font-size: 28rpx;
+}
+.section-swiper swiper .swiper-item .conteng-img:nth-child(n+6) {
+  padding-top: 16rpx;
+}
+.section-swiper .list-doit {
+  display: flex;
+  justify-content: center;
+  gap: 20rpx;
+  margin-bottom: 20rpx;
+  padding-top: 16rpx;
+}
+.section-swiper .list-doit .doit {
+  width: 60rpx;
+  height: 12rpx;
+  background-color: #e6e6e6;
+  border-radius: 8rpx;
 }
 
