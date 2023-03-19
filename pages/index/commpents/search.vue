@@ -136,7 +136,7 @@
 		methods: {
 			swiperDiot(e) {
 				this.num = e.detail.current
-				console.log(e.detail.current)
+				// console.log(e.detail.current)
 			}
 		}
 	}
@@ -174,7 +174,8 @@
 		}
 
 		span {
-			font-weight: bold;
+			font-size: 24upx;
+			color:#cec1c1;
 		}
 	}
 
@@ -237,7 +238,6 @@
 			display: flex;
 			justify-content: center;
 			gap: 20upx;
-			margin-bottom: 20upx;
 			padding-top: 16upx;
 
 			.doit {

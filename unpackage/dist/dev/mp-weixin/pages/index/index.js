@@ -153,17 +153,17 @@ var Preference = function Preference() {
 };
 var Title = function Title() {
   __webpack_require__.e(/*! require.ensure | pages/index/commpents/title */ "pages/index/commpents/title").then((function () {
-    return resolve(__webpack_require__(/*! @/pages/index/commpents/title.vue */ 65));
+    return resolve(__webpack_require__(/*! @/pages/index/commpents/title.vue */ 67));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Delicacy = function Delicacy() {
   __webpack_require__.e(/*! require.ensure | pages/index/commpents/delicacy */ "pages/index/commpents/delicacy").then((function () {
-    return resolve(__webpack_require__(/*! @/pages/index/commpents/delicacy.vue */ 70));
+    return resolve(__webpack_require__(/*! @/pages/index/commpents/delicacy.vue */ 72));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Talkout = function Talkout() {
   __webpack_require__.e(/*! require.ensure | pages/index/commpents/talkout */ "pages/index/commpents/talkout").then((function () {
-    return resolve(__webpack_require__(/*! @/pages/index/commpents/talkout.vue */ 75));
+    return resolve(__webpack_require__(/*! @/pages/index/commpents/talkout.vue */ 77));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {

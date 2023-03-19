@@ -234,7 +234,7 @@ var _default = {
   methods: {
     swiperDiot: function swiperDiot(e) {
       this.num = e.detail.current;
-      console.log(e.detail.current);
+      // console.log(e.detail.current)
     }
   }
 };

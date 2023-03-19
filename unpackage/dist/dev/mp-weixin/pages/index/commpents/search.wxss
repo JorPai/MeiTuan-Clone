@@ -17,7 +17,8 @@
   font-size: 32rpx;
 }
 .section-nav ._span {
-  font-weight: bold;
+  font-size: 24rpx;
+  color: #cec1c1;
 }
 .section-search {
   position: relative;
@@ -67,7 +68,6 @@
   display: flex;
   justify-content: center;
   gap: 20rpx;
-  margin-bottom: 20rpx;
   padding-top: 16rpx;
 }
 .section-swiper .list-doit .doit {
