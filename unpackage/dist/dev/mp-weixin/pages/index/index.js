@@ -141,6 +141,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _api = __webpack_require__(/*! @/api/api.js */ 88);
 var Search = function Search() {
   __webpack_require__.e(/*! require.ensure | pages/index/commpents/search */ "pages/index/commpents/search").then((function () {
     return resolve(__webpack_require__(/*! @/pages/index/commpents/search.vue */ 53));
@@ -175,10 +176,23 @@ var _default = {
     Talkout: Talkout
   },
   data: function data() {
-    return {};
+    return {
+      listYx: []
+    };
   },
   onLoad: function onLoad() {},
-  methods: {}
+  methods: {
+    preference: function preference() {
+      var _this = this;
+      (0, _api.pageIndex)().then(function (e) {
+        _this.listYx = e;
+        console.log(_this.listYx);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.preference();
+  }
 };
 exports.default = _default;
 

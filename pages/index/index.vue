@@ -1,7 +1,7 @@
 <template>
 	<view class="contBox">
 		<Search></Search>
-		<Preference></Preference>
+		<Preference :listY='listYx'></Preference>
 		<Title></Title>
 		<Delicacy></Delicacy>
 		<Talkout></Talkout>
@@ -14,9 +14,13 @@
 	import Title from "@/pages/index/commpents/title.vue"
 	import Delicacy from "@/pages/index/commpents/delicacy.vue"
 	import Talkout from "@/pages/index/commpents/talkout.vue"
-	
+
+	import {
+		pageIndex
+	} from "@/api/api.js"
+
 	export default {
-		components:{
+		components: {
 			Search,
 			Preference,
 			Title,
@@ -25,20 +29,28 @@
 		},
 		data() {
 			return {
-				
+				listYx: [],
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+			 preference(){
+				pageIndex().then(e => {
+					this.listYx = e
+					console.log(this.listYx);
+				})
+			}
+		},
+		mounted() {
+			this.preference()
 		}
 	}
 </script>
 
 <style scoped>
-	.contBox{
+	.contBox {
 		margin: 0 15upx;
 	}
 </style>
