@@ -19,7 +19,6 @@
 		<!-- <view>
 			<button @click="anniu">测试</button>
 		</view> -->
-		
 	</view>
 </template>
 

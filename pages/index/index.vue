@@ -2,9 +2,9 @@
 	<view class="contBox">
 		<Search></Search>
 		<Preference :listY='listYx'></Preference>
-		<Title></Title>
 		<Delicacy></Delicacy>
-		<Talkout></Talkout>
+		<Talkout :delicacyList='delicacyList'></Talkout>
+		<Title></Title>
 	</view>
 </template>
 
@@ -16,7 +16,8 @@
 	import Talkout from "@/pages/index/commpents/talkout.vue"
 
 	import {
-		pageIndex
+		pageIndex,
+		shopList
 	} from "@/api/api.js"
 
 	export default {
@@ -30,6 +31,7 @@
 		data() {
 			return {
 				listYx: [],
+				delicacyList:[]
 			}
 		},
 		onLoad() {
@@ -39,7 +41,11 @@
 			 preference(){
 				pageIndex().then(e => {
 					this.listYx = e
-					console.log(this.listYx);
+					// console.log(this.listYx);
+				});
+				shopList().then(e =>{
+					// console.log(e);
+					this.delicacyList = e
 				})
 			}
 		},

@@ -1,9 +1,22 @@
 <template>
-	<view>商家</view>
+	<view>
+		<view class="title">
+			商家
+		</view>
+	</view>
 </template>
 
 <script>
+
+	export default {
+		data() {
+			return {
+
+			}
+		}
+	}
 </script>
 
-<style>
+<style scoped lang="less">
+	
 </style>

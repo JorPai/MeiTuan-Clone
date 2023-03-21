@@ -105,7 +105,7 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"pages/index/commpents/preference":1,"pages/index/commpents/search":1};
+/******/ 		var cssChunks = {"pages/index/commpents/delicacy":1,"pages/index/commpents/preference":1,"pages/index/commpents/search":1,"pages/index/commpents/talkout":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {

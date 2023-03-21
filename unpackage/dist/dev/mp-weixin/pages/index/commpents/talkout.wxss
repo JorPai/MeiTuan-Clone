@@ -1,0 +1,47 @@
+.delicacyList.data-v-4985330e {
+  width: 100%;
+}
+.delicacyList .delicacyList-box.data-v-4985330e {
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 4rpx 0;
+  border-bottom: 1px solid #7b7b7b;
+  display: flex;
+}
+.delicacyList .delicacyList-box .List-left.data-v-4985330e {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 16rpx;
+  margin-right: 12rpx;
+}
+.delicacyList .delicacyList-box .right.data-v-4985330e {
+  width: calc(100% - 160rpx);
+}
+.delicacyList .delicacyList-box .right text.data-v-4985330e {
+  font-size: 24rpx;
+  color: #7b7b7b;
+}
+.delicacyList .delicacyList-box .right .listTitle.data-v-4985330e {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.delicacyList .delicacyList-box .right .listTop.data-v-4985330e {
+  display: flex;
+  justify-content: space-between;
+}
+.delicacyList .delicacyList-box .right .listMid.data-v-4985330e {
+  display: flex;
+  gap: 60rpx;
+  margin: 10rpx 0;
+}
+.delicacyList .delicacyList-box .right .listBot.data-v-4985330e {
+  display: flex;
+  align-items: center;
+}
+.delicacyList .delicacyList-box .right .listBot image.data-v-4985330e {
+  width: 24rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+}
+

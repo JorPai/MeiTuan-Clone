@@ -9584,60 +9584,7 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 33 */,
-/* 34 */,
-/* 35 */,
-/* 36 */,
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */,
-/* 54 */,
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */
+/* 33 */
 /*!*********************************************************!*\
   !*** D:/HBuilderX/project/MeiTuan-Clone/store/index.js ***!
   \*********************************************************/
@@ -9653,7 +9600,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
-var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 87));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 34));
 _vue.default.use(_vuex.default);
 var _default = new _vuex.default.Store({
   state: {
@@ -9677,7 +9624,7 @@ var _default = new _vuex.default.Store({
 exports.default = _default;
 
 /***/ }),
-/* 87 */
+/* 34 */
 /*!**************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vuex3/dist/vuex.common.js ***!
   \**************************************************************************************/
@@ -10933,7 +10880,13 @@ module.exports = index_cjs;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 88 */
+/* 35 */,
+/* 36 */,
+/* 37 */,
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */
 /*!*****************************************************!*\
   !*** D:/HBuilderX/project/MeiTuan-Clone/api/api.js ***!
   \*****************************************************/
@@ -10947,14 +10900,19 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.pageIndex = pageIndex;
-var _uniRequest = __webpack_require__(/*! @/api/uniRequest.js */ 89);
+exports.shopList = shopList;
+var _uniRequest = __webpack_require__(/*! @/api/uniRequest.js */ 42);
 /* 首页 */
 function pageIndex() {
   return (0, _uniRequest.uniRequest)('forshop/getprefer', 'GET', true);
 }
+/* 商家数据 */
+function shopList() {
+  return (0, _uniRequest.uniRequest)('forshop/wxshop', 'GET', true);
+}
 
 /***/ }),
-/* 89 */
+/* 42 */
 /*!************************************************************!*\
   !*** D:/HBuilderX/project/MeiTuan-Clone/api/uniRequest.js ***!
   \************************************************************/
@@ -10973,7 +10931,7 @@ exports.showFullScreenLoading = showFullScreenLoading;
 exports.tryHideFullScreenLoading = tryHideFullScreenLoading;
 exports.uniRequest = uniRequest;
 exports.uniRequestMulti = uniRequestMulti;
-var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ 86));
+var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ 33));
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 25));
 _vue.default.prototype.$store = _index.default;
 var baseUrl = 'https://meituan.thexxdd.cn/api/';

@@ -1,0 +1,27 @@
+.delicacy .delicacy-title.data-v-22d20fcb {
+  font-size: 35rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 20rpx 0;
+}
+.delicacy .delicacy-box.data-v-22d20fcb {
+  display: flex;
+  gap: 36rpx;
+}
+.delicacy .delicacy-box .debox-left.data-v-22d20fcb {
+  display: flex;
+  align-items: center;
+}
+.delicacy .delicacy-box .debox-left image.data-v-22d20fcb {
+  width: 30rpx;
+  height: 30rpx;
+}
+.delicacy .delicacy-box .demo.data-v-22d20fcb {
+  font-size: 28rpx;
+  color: #7b7b7b;
+}
+.delicacy .delicacy-box .debox-right.data-v-22d20fcb {
+  justify-content: flex-end;
+  flex-grow: 5;
+}
+
