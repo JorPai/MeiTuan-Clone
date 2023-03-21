@@ -5,7 +5,7 @@
   width: 100%;
   margin-top: 20rpx;
   padding: 4rpx 0;
-  border-bottom: 1px solid #7b7b7b;
+  border-bottom: 2rpx solid #bababa;
   display: flex;
 }
 .delicacyList .delicacyList-box .List-left.data-v-4985330e {

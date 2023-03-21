@@ -49,7 +49,7 @@
 			width: 100%;
 			margin-top: 20upx;
 			padding: 4upx 0;
-			border-bottom: 1px solid #7b7b7b;
+			border-bottom: 2upx solid #bababa;
 			display: flex;
 
 			.List-left {
