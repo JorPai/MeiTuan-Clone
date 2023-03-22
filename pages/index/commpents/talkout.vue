@@ -43,8 +43,7 @@
 <style scoped lang="less">
 	// 列表
 	.delicacyList {
-		width: 100%;
-
+		margin: 0 15upx;
 		.delicacyList-box {
 			width: 100%;
 			margin-top: 20upx;

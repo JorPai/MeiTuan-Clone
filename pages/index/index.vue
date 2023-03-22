@@ -55,8 +55,6 @@
 	}
 </script>
 
-<style scoped>
-	.contBox {
-		margin: 0 15upx;
-	}
+<style lang="less" scoped>
+	
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="searchBox">
 		<!-- 导航区域 -->
 		<view class="section-nav">
 			<image src="@/static/coen/dizhi.png" alt="" mode="widthFix"></image>
@@ -151,7 +151,9 @@
 	.active {
 		background-color: #fbae22 !important;
 	}
-
+	.searchBox{
+		margin:0 15upx;;
+	}
 	// 定义公共小图标的变量
 	@imgicon-width: 35upx;
 	@imgicon-height: 35upx;

@@ -1,10 +1,18 @@
+.active.data-v-22d20fcb {
+  color: #f0f000;
+}
+.activBtn.data-v-22d20fcb {
+  background-color: #fef6df !important;
+  color: #f29909 !important;
+}
 .delicacy .delicacy-title.data-v-22d20fcb {
   font-size: 35rpx;
   height: 50rpx;
   line-height: 50rpx;
-  margin: 20rpx 0;
+  margin: 20rpx 15rpx;
 }
 .delicacy .delicacy-box.data-v-22d20fcb {
+  margin: 0 15rpx;
   display: flex;
   gap: 36rpx;
 }
@@ -23,5 +31,51 @@
 .delicacy .delicacy-box .debox-right.data-v-22d20fcb {
   justify-content: flex-end;
   flex-grow: 5;
+}
+.delicacy .listIndex.data-v-22d20fcb {
+  width: 100%;
+  padding: 10rpx 0 60rpx;
+}
+.delicacy .listIndex .pageIndex.data-v-22d20fcb {
+  padding: 16rpx 15rpx;
+  border-top: 1px solid #b4b4b4;
+}
+.delicacy .scorllList.data-v-22d20fcb {
+  background-color: white;
+  height: 700rpx;
+  position: relative;
+}
+.delicacy .scorllList .scollBtn.data-v-22d20fcb {
+  display: flex;
+  justify-content: space-evenly;
+}
+.delicacy .scorllList .scollBtn .scollText.data-v-22d20fcb {
+  width: calc((100% / 3)-30rpx);
+  text-align: center;
+  padding: 10rpx 40rpx;
+  background-color: #e1e1e1;
+  color: #7b7b7b;
+}
+.delicacy .scorllList .fixBtn.data-v-22d20fcb {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.delicacy .scorllList .fixBtn .allBtn.data-v-22d20fcb {
+  width: calc(100%/2);
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.delicacy .scorllList .fixBtn .cleanBtn.data-v-22d20fcb {
+  border-top: 1px solid #d8d8d8;
+  background-color: white;
+}
+.delicacy .scorllList .fixBtn .finallyBtn.data-v-22d20fcb {
+  border-top: 1px solid #f0f000;
+  background-color: #f0f000;
 }
 

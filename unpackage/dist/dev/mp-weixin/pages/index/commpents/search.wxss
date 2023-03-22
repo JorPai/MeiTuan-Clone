@@ -1,6 +1,9 @@
 .active {
   background-color: #fbae22 !important;
 }
+.searchBox {
+  margin: 0 15rpx;
+}
 .section-nav {
   display: flex;
   align-items: center;

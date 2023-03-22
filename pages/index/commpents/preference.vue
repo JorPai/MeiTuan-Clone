@@ -42,8 +42,7 @@
 
 <style scoped lang="less">
 	.perferContent {
-		margin-top: 28upx;
-
+		margin: 28upx 15upx 0;
 		.starTitle {
 			font-size: 35upx;
 			height: 50upx;
