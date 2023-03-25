@@ -120,6 +120,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _api = __webpack_require__(/*! @/api/api.js */ 41);
 //
 //
 //
@@ -193,6 +194,8 @@ var _default = {
       flagList: false,
       ying: false,
       flag: true,
+      screen: '',
+      nums: 0,
       sortlist: [{
         "name": "综合排序",
         "screen": "_id",
@@ -267,11 +270,14 @@ var _default = {
       }
     },
     // 选择哪一个功能
-    changBgName: function changBgName(index, name) {
+    changBgName: function changBgName(index, name, screen, nums) {
       this.sizeName = name;
       this.num = index;
       this.backClear();
       // console.log(this.num);
+      this.screen = screen;
+      this.nums = nums;
+      // console.log(this.screen+this.nums);
     },
     // 销量高，速度快...
     saleRef: function saleRef() {
@@ -299,7 +305,13 @@ var _default = {
       this.ying = false;
       this.drop = false;
       this.flagList = false;
+    },
+    sortPage: function sortPage() {
+      (0, _api.sortPages)().then(function (e) {});
     }
+  },
+  mounted: function mounted() {
+    this.sortPage();
   }
 };
 exports.default = _default;

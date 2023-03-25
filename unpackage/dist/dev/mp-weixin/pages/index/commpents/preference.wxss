@@ -11,7 +11,7 @@
   font-size: 35rpx;
   height: 50rpx;
   line-height: 50rpx;
-  margin: 20rpx 0;
+  margin: 20rpx 0 10rpx;
 }
 .scroll .scroll-view_H.data-v-196dd3d4 {
   white-space: nowrap;

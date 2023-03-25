@@ -10901,6 +10901,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.pageIndex = pageIndex;
 exports.shopList = shopList;
+exports.sortPages = sortPages;
 var _uniRequest = __webpack_require__(/*! @/api/uniRequest.js */ 42);
 /* 首页 */
 function pageIndex() {
@@ -10909,6 +10910,10 @@ function pageIndex() {
 /* 商家数据 */
 function shopList() {
   return (0, _uniRequest.uniRequest)('forshop/wxshop', 'GET', true);
+}
+// 排序
+function sortPages() {
+  return (0, _uniRequest.uniRequest)('forshop/starting', 'POST', true);
 }
 
 /***/ }),

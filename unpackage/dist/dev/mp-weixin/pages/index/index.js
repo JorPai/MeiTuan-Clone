@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {
+/* WEBPACK VAR INJECTION */(function(wx, uni) {
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
@@ -201,6 +201,12 @@ var _default = (_components$data$onLo = {
         // console.log(e);
         _this.delicacyList = e;
       });
+    },
+    pageScorll: function pageScorll() {
+      wx.pageScrollTo({
+        scrollTop: this.topdata,
+        duration: 300
+      });
     }
   },
   mounted: function mounted() {
@@ -210,13 +216,14 @@ var _default = (_components$data$onLo = {
   var _this2 = this;
   var query = uni.createSelectorQuery();
   query.select('#sorllId').boundingClientRect().exec(function (res) {
+    // console.log(res);
     _this2.menutop = Math.floor(res[0].top);
-    console.log(_this2.menutop);
-    // this.topdata = res[0].top
+    // console.log(this.menutop);
+    _this2.topdata = Math.floor(res[0].top);
   });
 }), (0, _defineProperty2.default)(_components$data$onLo, "onPageScroll", function onPageScroll(e) {
   this.delicacyPage = Math.floor(e.scrollTop);
-  console.log(this.delicacyPage);
+  // console.log(this.delicacyPage);
 }), (0, _defineProperty2.default)(_components$data$onLo, "computed", {
   // 计算判断是否固定
   delicacyScoll: function delicacyScoll() {
@@ -228,7 +235,7 @@ var _default = (_components$data$onLo = {
   }
 }), _components$data$onLo);
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

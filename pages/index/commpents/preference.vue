@@ -60,7 +60,7 @@
 		font-size: 35upx;
 		height: 50upx;
 		line-height: 50upx;
-		margin: 20upx 0;
+		margin: 20upx 0 10upx;
 	}
 	.scroll {
 		.scroll-view_H {

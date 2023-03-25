@@ -8,3 +8,7 @@ export function pageIndex() {
 export function shopList(){
 	return uniRequest('forshop/wxshop','GET',true)
 }
+// 排序
+export function sortPages(){
+	return uniRequest('forshop/starting','POST',true)
+}

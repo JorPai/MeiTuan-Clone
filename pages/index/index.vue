@@ -2,7 +2,9 @@
 	<view class="contBox">
 		<Search></Search>
 		<Preference :listY='listYx'></Preference>
-		<Delicacy id="sorllId" :class="{'isFixed' : flag}"></Delicacy>
+		<view @click="pageScorll"  :catchtouchmove='doNothing'>
+			<Delicacy id="sorllId" :class="{'isFixed' : flag}"></Delicacy>
+		</view>
 		<Talkout :delicacyList='delicacyList'></Talkout>
 		<Title></Title>
 	</view>
@@ -30,26 +32,32 @@
 		},
 		data() {
 			return {
-				flag:false,
-				menuTop:'',
-				topdata:'',
-				delicacyPage:'',
+				flag: false,
+				menuTop: '',
+				topdata: '',
+				delicacyPage: '',
 				listYx: [],
-				delicacyList:[]
+				delicacyList: []
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-			 preference(){
+			preference() {
 				pageIndex().then(e => {
 					this.listYx = e
 					// console.log(this.listYx);
 				});
-				shopList().then(e =>{
+				shopList().then(e => {
 					// console.log(e);
 					this.delicacyList = e
+				})
+			},
+			pageScorll() {
+				wx.pageScrollTo({
+					scrollTop: this.topdata,
+					duration: 300
 				})
 			}
 		},
@@ -57,25 +65,27 @@
 			this.preference();
 		},
 		// 监听值
-		onLoad(){
+		onLoad() {
 			const query = uni.createSelectorQuery();
 			query.select('#sorllId').boundingClientRect().exec((res) => {
-				this.menutop =Math.floor(res[0].top) 
-				console.log(this.menutop);
-				// this.topdata = res[0].top
+				// console.log(res);
+				this.menutop = Math.floor(res[0].top)
+				// console.log(this.menutop);
+				this.topdata = Math.floor(res[0].top)
+
 			});
 		},
 		// 监听页面滚动
-		onPageScroll(e){
-			this.delicacyPage = Math.floor(e.scrollTop) 
-			console.log(this.delicacyPage);
+		onPageScroll(e) {
+			this.delicacyPage = Math.floor(e.scrollTop)
+			// console.log(this.delicacyPage);
 		},
-		computed:{
+		computed: {
 			// 计算判断是否固定
-			delicacyScoll(){
-				if(this.delicacyPage > this.menuTop){
+			delicacyScoll() {
+				if (this.delicacyPage > this.menuTop) {
 					this.flag = true
-				}else{
+				} else {
 					this.flag = false
 				}
 			}
@@ -84,7 +94,7 @@
 </script>
 
 <style lang="less" scoped>
-	.isFixed{
+	.isFixed {
 		position: fixed;
 		left: 0;
 		top: 0;

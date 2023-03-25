@@ -11,8 +11,8 @@
 				<view class="demo" @click='saleRef()'>销量高</view>
 				<view class="demo" @click='saleRef()'>速度快</view>
 				<view class="demo" @click='saleRef()'>津贴联盟</view>
-				<view class="debox-left debox-right"  @click="scorllSet()">
-					<view class="demo demo-text" >
+				<view class="debox-left debox-right" @click="scorllSet()">
+					<view class="demo demo-text">
 						筛选
 					</view>
 					<image src="@/static/coen/shaixuan.png" mode="widthFix"></image>
@@ -21,7 +21,7 @@
 			<!-- 综合条件筛选页面 -->
 			<view class="listIndex" v-if="drop">
 				<block v-for="(item,index) in sortlist" :key="index">
-					<view class="pageIndex" :class="{active: index == num}" @click="changBgName(index,item.name)">
+					<view class="pageIndex" :class="{active: index == num}" @click="changBgName(index,item.name,item.screen,item.nums)">
 						{{item.name}}
 					</view>
 				</block>
@@ -63,6 +63,7 @@
 </template>
 
 <script>
+	import {sortPages} from "@/api/api.js"
 	export default {
 		data() {
 			return {
@@ -72,6 +73,8 @@
 				flagList: false,
 				ying: false,
 				flag: true,
+				screen:'',
+				nums:0,
 				sortlist: [{
 						"name": "综合排序",
 						"screen": "_id",
@@ -157,22 +160,25 @@
 				}
 			},
 			// 选择哪一个功能
-			changBgName(index, name) {
+			changBgName(index, name , screen , nums) {
 				this.sizeName = name
 				this.num = index
 				this.backClear()
 				// console.log(this.num);
+				this.screen = screen
+				this.nums = nums
+				// console.log(this.screen+this.nums);
 			},
 			// 销量高，速度快...
 			saleRef() {
 				this.backClear()
 			},
 			// 筛选
-			scorllSet(){
+			scorllSet() {
 				this.flag = !this.flag
 				if (this.flag) {
 					this.flagList = true
-					this.backOne() 
+					this.backOne()
 					this.drop = false
 				} else {
 					this.backClear()
@@ -188,9 +194,17 @@
 				this.ying = false
 				this.drop = false
 				this.flagList = false
+			},
+			sortPage(){
+				sortPages().then(e =>{
+					
+				})
 			}
+		},
+		mounted() {
+			this.sortPage()
 		}
-
+		
 	}
 </script>
 
@@ -204,10 +218,11 @@
 		color: #f29909 !important;
 	}
 
-	
+
 
 	.delicacy {
 		width: 100%;
+		padding: 10upx 0;
 		background-color: white;
 		position: absolute;
 		left: 0;
