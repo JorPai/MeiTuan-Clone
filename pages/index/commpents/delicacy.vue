@@ -1,60 +1,67 @@
 <template>
-	<view class="delicacy">
+	<view>
 		<view class="delicacy-title">
 			附近商家
 		</view>
-		<view class="delicacy-box">
-			<view class="debox-left">
-				<view class="demo demo-text">
-					综合排序
-				</view>
-				<image src="@/static/coen/paixu.png" mode="widthFix"></image>
-			</view>
-			<view class="demo">销量高</view>
-			<view class="demo">速度快</view>
-			<view class="demo">津贴联盟</view>
-			<view class="debox-left debox-right">
-				<view class="demo demo-text">
-					筛选
-				</view>
-				<image src="@/static/coen/shaixuan.png" mode="widthFix"></image>
-			</view>
-		</view>
-		<!-- 综合条件筛选页面 -->
-		<view class="listIndex" v-if="drop">
-			<block v-for="(item,index) in sortlist" :key="index">
-				<view class="pageIndex">{{item.name}}</view>
-			</block>
-		</view>
-		<!-- 筛选 -->
-		<view class="listIndex scorllList" v-if="flagList">
-			<block v-for="(item,index) in screendata" :key="index">
-				<view>
-					<view class="scollTittle">{{item.title}}</view>
-					<view class="scollBtn">
-						<block v-for="(itemDatas,index) in item.datas" :key="index">
-							<view class="scollText">{{itemDatas.name}}</view>
-						</block>
+		<view class="delicacy">
+			<view class="delicacy-box">
+				<view class="debox-left" @click="sizeNameChange()">
+					<view class="demo demo-text">
+						{{sizeName}}
 					</view>
+					<image src="@/static/coen/paixu.png" mode="widthFix"></image>
 				</view>
-			</block>
-			<!-- 单选 -->
-			<block v-for="(item,index) in person" :key="index">
-				<view>
-					<view class="scollTittle">{{item.title}}</view>
-					<view class="scollBtn">
-						<block v-for="(itemDatas,index) in item.datas" :key="index">
-							<view class="scollText">{{itemDatas.name}}</view>
-						</block>
+				<view class="demo" @click='saleRef()'>销量高</view>
+				<view class="demo" @click='saleRef()'>速度快</view>
+				<view class="demo" @click='saleRef()'>津贴联盟</view>
+				<view class="debox-left debox-right"  @click="scorllSet()">
+					<view class="demo demo-text" >
+						筛选
 					</view>
+					<image src="@/static/coen/shaixuan.png" mode="widthFix"></image>
 				</view>
-			</block>
-			<!-- 清空和完成 -->
-			<veiw class="fixBtn">
-				<view class="cleanBtn allBtn">清空</view>
-				<view class="finallyBtn allBtn">完成</view>
-			</veiw>
+			</view>
+			<!-- 综合条件筛选页面 -->
+			<view class="listIndex" v-if="drop">
+				<block v-for="(item,index) in sortlist" :key="index">
+					<view class="pageIndex" :class="{active: index == num}" @click="changBgName(index,item.name)">
+						{{item.name}}
+					</view>
+				</block>
+			</view>
+			<!-- 筛选 -->
+			<view class="listIndex scorllList" v-if="flagList">
+				<block v-for="(item,index) in screendata" :key="index">
+					<view>
+						<view class="scollTittle">{{item.title}}</view>
+						<view class="scollBtn">
+							<block v-for="(itemDatas,index) in item.datas" :key="index">
+								<view class="scollText">{{itemDatas.name}}</view>
+							</block>
+						</view>
+					</view>
+				</block>
+				<!-- 单选 -->
+				<block v-for="(item,index) in person" :key="index">
+					<view>
+						<view class="scollTittle">{{item.title}}</view>
+						<view class="scollBtn">
+							<block v-for="(itemDatas,index) in item.datas" :key="index">
+								<view class="scollText">{{itemDatas.name}}</view>
+							</block>
+						</view>
+					</view>
+				</block>
+				<!-- 清空和完成 -->
+				<veiw class="fixBtn">
+					<view class="cleanBtn allBtn">清空</view>
+					<view class="finallyBtn allBtn">完成</view>
+				</veiw>
+			</view>
 		</view>
+
+		<!-- 透明背景 -->
+		<view class="ying" v-if="ying" @click="backClear()"></view>
 	</view>
 </template>
 
@@ -62,8 +69,12 @@
 	export default {
 		data() {
 			return {
-				flag: false,
-				flagList:false,
+				num: 0,
+				sizeName: '综合排序',
+				drop: false,
+				flagList: false,
+				ying: false,
+				flag: true,
 				sortlist: [{
 						"name": "综合排序",
 						"screen": "_id",
@@ -136,7 +147,47 @@
 				}],
 			}
 		},
-		methods: {}
+		methods: {
+			// 综合排序显示隐藏
+			sizeNameChange() {
+				this.flag = !this.flag
+				if (this.flag) {
+					this.drop = true
+					this.backOne()
+				} else {
+					this.backClear()
+				}
+			},
+			// 选择哪一个功能
+			changBgName(index, name) {
+				this.sizeName = name
+				this.num = index
+				this.backClear()
+				// console.log(this.num);
+			},
+			// 销量高，速度快...
+			saleRef() {
+				this.backClear()
+			},
+			// 筛选
+			scorllSet(){
+				console.log(11);
+				this.flagList = true
+				this.backOne() 
+				this.drop = false
+			},
+			// 背景显示隐藏
+			backOne() {
+				setTimeout(() => {
+					this.ying = true
+				})
+			},
+			backClear() {
+				this.ying = false
+				this.drop = false
+				this.flagList = false
+			}
+		}
 
 	}
 </script>
@@ -151,15 +202,21 @@
 		color: #f29909 !important;
 	}
 
-	.delicacy {
+	// 主题标签
+	.delicacy-title {
+		font-size: 35upx;
+		height: 50upx;
+		line-height: 50upx;
+		margin: 20upx 15upx;
+	}
 
-		// 主题标签
-		.delicacy-title {
-			font-size: 35upx;
-			height: 50upx;
-			line-height: 50upx;
-			margin: 20upx 15upx;
-		}
+	.delicacy {
+		width: 100%;
+		background-color: white;
+		position: absolute;
+		left: 0;
+		right: 0;
+		z-index: 99;
 
 		// 盒子
 		.delicacy-box {
@@ -203,13 +260,16 @@
 			background-color: white;
 			height: 700upx;
 			position: relative;
+
 			.scollTittle {
-				
+				padding: 15upx;
 			}
 
 			.scollBtn {
 				display: flex;
+				flex-wrap: wrap;
 				justify-content: space-evenly;
+				margin: 30upx 0 50upx;
 
 				.scollText {
 					width: calc((100% / 3)- 30upx);
@@ -219,28 +279,41 @@
 					color: #7b7b7b;
 				}
 			}
-			.fixBtn{
+
+			.fixBtn {
 				width: 100%;
 				display: flex;
 				justify-content: space-between;
 				position: absolute;
 				left: 0;
 				bottom: 0;
-				.allBtn{
+
+				.allBtn {
 					width: calc(100%/2);
 					text-align: center;
 					height: 100upx;
 					line-height: 100upx;
 				}
-				.cleanBtn{
-					border-top:1px solid #d8d8d8;
+
+				.cleanBtn {
+					border-top: 1px solid #d8d8d8;
 					background-color: white;
 				}
-				.finallyBtn{
-					border-top:1px solid #f0f000;
+
+				.finallyBtn {
+					border-top: 1px solid #f0f000;
 					background-color: #f0f000;
 				}
 			}
 		}
+	}
+
+	.ying {
+		background: rgba(0, 0, 0, 0.5);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 	}
 </style>

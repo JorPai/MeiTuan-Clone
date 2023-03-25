@@ -180,11 +180,22 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
-      flag: false,
+      num: 0,
+      sizeName: '综合排序',
+      drop: false,
       flagList: false,
+      ying: false,
+      flag: true,
       sortlist: [{
         "name": "综合排序",
         "screen": "_id",
@@ -246,7 +257,48 @@ var _default = {
       }]
     };
   },
-  methods: {}
+  methods: {
+    // 综合排序显示隐藏
+    sizeNameChange: function sizeNameChange() {
+      this.flag = !this.flag;
+      if (this.flag) {
+        this.drop = true;
+        this.backOne();
+      } else {
+        this.backClear();
+      }
+    },
+    // 选择哪一个功能
+    changBgName: function changBgName(index, name) {
+      this.sizeName = name;
+      this.num = index;
+      this.backClear();
+      // console.log(this.num);
+    },
+    // 销量高，速度快...
+    saleRef: function saleRef() {
+      this.backClear();
+    },
+    // 筛选
+    scorllSet: function scorllSet() {
+      console.log(11);
+      this.flagList = true;
+      this.backOne();
+      this.drop = false;
+    },
+    // 背景显示隐藏
+    backOne: function backOne() {
+      var _this = this;
+      setTimeout(function () {
+        _this.ying = true;
+      });
+    },
+    backClear: function backClear() {
+      this.ying = false;
+      this.drop = false;
+      this.flagList = false;
+    }
+  }
 };
 exports.default = _default;
 

@@ -5,11 +5,19 @@
   background-color: #fef6df !important;
   color: #f29909 !important;
 }
-.delicacy .delicacy-title.data-v-22d20fcb {
+.delicacy-title.data-v-22d20fcb {
   font-size: 35rpx;
   height: 50rpx;
   line-height: 50rpx;
   margin: 20rpx 15rpx;
+}
+.delicacy.data-v-22d20fcb {
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 .delicacy .delicacy-box.data-v-22d20fcb {
   margin: 0 15rpx;
@@ -45,9 +53,14 @@
   height: 700rpx;
   position: relative;
 }
+.delicacy .scorllList .scollTittle.data-v-22d20fcb {
+  padding: 15rpx;
+}
 .delicacy .scorllList .scollBtn.data-v-22d20fcb {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 30rpx 0 50rpx;
 }
 .delicacy .scorllList .scollBtn .scollText.data-v-22d20fcb {
   width: calc((100% / 3)-30rpx);
@@ -77,5 +90,13 @@
 .delicacy .scorllList .fixBtn .finallyBtn.data-v-22d20fcb {
   border-top: 1px solid #f0f000;
   background-color: #f0f000;
+}
+.ying.data-v-22d20fcb {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
