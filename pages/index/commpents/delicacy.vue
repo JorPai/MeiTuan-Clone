@@ -153,6 +153,7 @@
 				this.flag = !this.flag
 				if (this.flag) {
 					this.drop = true
+					this.flagList = false
 					this.backOne()
 				} else {
 					this.backClear()
@@ -171,10 +172,14 @@
 			},
 			// 筛选
 			scorllSet(){
-				console.log(11);
-				this.flagList = true
-				this.backOne() 
-				this.drop = false
+				this.flag = !this.flag
+				if (this.flag) {
+					this.flagList = true
+					this.backOne() 
+					this.drop = false
+				} else {
+					this.backClear()
+				}
 			},
 			// 背景显示隐藏
 			backOne() {
