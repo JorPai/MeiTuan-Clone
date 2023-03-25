@@ -5,12 +5,6 @@
   background-color: #fef6df !important;
   color: #f29909 !important;
 }
-.delicacy-title.data-v-22d20fcb {
-  font-size: 35rpx;
-  height: 50rpx;
-  line-height: 50rpx;
-  margin: 20rpx 15rpx;
-}
 .delicacy.data-v-22d20fcb {
   width: 100%;
   background-color: white;

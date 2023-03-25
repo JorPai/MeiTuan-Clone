@@ -1,8 +1,5 @@
 <template>
 	<view>
-		<view class="delicacy-title">
-			附近商家
-		</view>
 		<view class="delicacy">
 			<view class="delicacy-box">
 				<view class="debox-left" @click="sizeNameChange()">
@@ -207,13 +204,7 @@
 		color: #f29909 !important;
 	}
 
-	// 主题标签
-	.delicacy-title {
-		font-size: 35upx;
-		height: 50upx;
-		line-height: 50upx;
-		margin: 20upx 15upx;
-	}
+	
 
 	.delicacy {
 		width: 100%;

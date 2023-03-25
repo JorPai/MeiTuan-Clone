@@ -19,17 +19,21 @@
 		<!-- <view>
 			<button @click="anniu">测试</button>
 		</view> -->
+
+		<view class="delicacy-title">
+			附近商家
+		</view>
 	</view>
 </template>
 
 <script>
 	export default {
-		props:{
-			listY:Array
+		props: {
+			listY: Array
 		},
 		data() {
 			return {
-				
+
 			}
 		},
 		methods: {
@@ -43,6 +47,7 @@
 <style scoped lang="less">
 	.perferContent {
 		margin: 28upx 15upx 0;
+
 		.starTitle {
 			font-size: 35upx;
 			height: 50upx;
@@ -50,7 +55,13 @@
 			margin-bottom: 20upx;
 		}
 	}
-
+	// 主题标签
+	.delicacy-title {
+		font-size: 35upx;
+		height: 50upx;
+		line-height: 50upx;
+		margin: 20upx 0;
+	}
 	.scroll {
 		.scroll-view_H {
 			white-space: nowrap;
@@ -60,9 +71,11 @@
 			.scroll-list {
 				display: flex;
 				justify-content: space-between;
-				view:nth-child(2){
+
+				view:nth-child(2) {
 					padding: 0 7upx !important;
 				}
+
 				.scroll-view-item_H {
 					height: 300upx;
 					width: 300upx;

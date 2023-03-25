@@ -7,6 +7,12 @@
   line-height: 50rpx;
   margin-bottom: 20rpx;
 }
+.delicacy-title.data-v-196dd3d4 {
+  font-size: 35rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 20rpx 0;
+}
 .scroll .scroll-view_H.data-v-196dd3d4 {
   white-space: nowrap;
   width: 100%;
