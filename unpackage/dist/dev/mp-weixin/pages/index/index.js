@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(wx, uni) {
+/* WEBPACK VAR INJECTION */(function(wx) {
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
@@ -181,7 +181,7 @@ var _default = (_components$data$onLo = {
   data: function data() {
     return {
       flag: false,
-      menuTop: '',
+      menutop: '',
       topdata: '',
       delicacyPage: '',
       listYx: [],
@@ -214,9 +214,9 @@ var _default = (_components$data$onLo = {
   }
 }, (0, _defineProperty2.default)(_components$data$onLo, "onLoad", function onLoad() {
   var _this2 = this;
-  var query = uni.createSelectorQuery();
+  var query = wx.createSelectorQuery();
   query.select('#sorllId').boundingClientRect().exec(function (res) {
-    // console.log(res);
+    // console.log(res[0]);
     _this2.menutop = Math.floor(res[0].top);
     // console.log(this.menutop);
     _this2.topdata = Math.floor(res[0].top);
@@ -225,17 +225,21 @@ var _default = (_components$data$onLo = {
   this.delicacyPage = Math.floor(e.scrollTop);
   // console.log(this.delicacyPage);
 }), (0, _defineProperty2.default)(_components$data$onLo, "computed", {
-  // 计算判断是否固定
-  delicacyScoll: function delicacyScoll() {
-    if (this.delicacyPage > this.menuTop) {
+  // 监听筛选组件置顶和不置顶
+  namepage: function namepage() {
+    // console.log('我是自动执行的')
+    // 如果页面滚动的高度大于筛选组件距离顶部的高度，那就置顶，反之不置顶
+    if (this.delicacyPage > this.menutop) {
+      console.log('置顶');
       this.flag = true;
     } else {
+      // console.log('不置顶')
       this.flag = false;
     }
   }
 }), _components$data$onLo);
 exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 
 /***/ }),
 

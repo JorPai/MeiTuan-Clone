@@ -21,7 +21,8 @@
 			<!-- 综合条件筛选页面 -->
 			<view class="listIndex" v-if="drop">
 				<block v-for="(item,index) in sortlist" :key="index">
-					<view class="pageIndex" :class="{active: index == num}" @click="changBgName(index,item.name,item.screen,item.nums)">
+					<view class="pageIndex" :class="{active: index == num}"
+						@click="changBgName(index,item.name,item.screen,item.nums)">
 						{{item.name}}
 					</view>
 				</block>
@@ -63,7 +64,9 @@
 </template>
 
 <script>
-	import {sortPages} from "@/api/api.js"
+	import {
+		sortPages
+	} from "@/api/api.js"
 	export default {
 		data() {
 			return {
@@ -73,8 +76,8 @@
 				flagList: false,
 				ying: false,
 				flag: true,
-				screen:'',
-				nums:0,
+				screen: '',
+				nums: 0,
 				sortlist: [{
 						"name": "综合排序",
 						"screen": "_id",
@@ -160,14 +163,12 @@
 				}
 			},
 			// 选择哪一个功能
-			changBgName(index, name , screen , nums) {
+			changBgName(index, name, screen, nums) {
 				this.sizeName = name
 				this.num = index
 				this.backClear()
 				// console.log(this.num);
-				this.screen = screen
-				this.nums = nums
-				// console.log(this.screen+this.nums);
+				this.sortPage(screen, nums)
 			},
 			// 销量高，速度快...
 			saleRef() {
@@ -195,16 +196,20 @@
 				this.drop = false
 				this.flagList = false
 			},
-			sortPage(){
-				sortPages().then(e =>{
-					
+			sortPage(screen, nums) {
+				let Data = {
+					screen,
+					nums
+				}
+				sortPages(Data).then(e => {
+					console.log(e);
 				})
 			}
 		},
 		mounted() {
 			this.sortPage()
 		}
-		
+
 	}
 </script>
 

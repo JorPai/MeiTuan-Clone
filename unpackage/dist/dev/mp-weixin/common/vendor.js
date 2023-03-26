@@ -10912,8 +10912,8 @@ function shopList() {
   return (0, _uniRequest.uniRequest)('forshop/wxshop', 'GET', true);
 }
 // 排序
-function sortPages() {
-  return (0, _uniRequest.uniRequest)('forshop/starting', 'POST', true);
+function sortPages(data) {
+  return (0, _uniRequest.uniRequest)('forshop/starting', data, 'POST', true);
 }
 
 /***/ }),

@@ -185,6 +185,7 @@ var _api = __webpack_require__(/*! @/api/api.js */ 41);
 //
 //
 //
+//
 var _default = {
   data: function data() {
     return {
@@ -275,9 +276,7 @@ var _default = {
       this.num = index;
       this.backClear();
       // console.log(this.num);
-      this.screen = screen;
-      this.nums = nums;
-      // console.log(this.screen+this.nums);
+      this.sortPage(screen, nums);
     },
     // 销量高，速度快...
     saleRef: function saleRef() {
@@ -306,8 +305,14 @@ var _default = {
       this.drop = false;
       this.flagList = false;
     },
-    sortPage: function sortPage() {
-      (0, _api.sortPages)().then(function (e) {});
+    sortPage: function sortPage(screen, nums) {
+      var Data = {
+        screen: screen,
+        nums: nums
+      };
+      (0, _api.sortPages)(Data).then(function (e) {
+        console.log(e);
+      });
     }
   },
   mounted: function mounted() {

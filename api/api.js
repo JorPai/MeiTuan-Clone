@@ -9,6 +9,6 @@ export function shopList(){
 	return uniRequest('forshop/wxshop','GET',true)
 }
 // 排序
-export function sortPages(){
-	return uniRequest('forshop/starting','POST',true)
+export function sortPages(data){
+	return uniRequest('forshop/starting',data,'POST',true)
 }
