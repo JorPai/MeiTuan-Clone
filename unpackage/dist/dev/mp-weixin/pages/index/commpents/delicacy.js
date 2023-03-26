@@ -306,12 +306,15 @@ var _default = {
       this.flagList = false;
     },
     sortPage: function sortPage(screen, nums) {
+      var _this2 = this;
       var Data = {
         screen: screen,
         nums: nums
       };
       (0, _api.sortPages)(Data).then(function (e) {
-        console.log(e);
+        // 将接口的值存储到vuex
+        _this2.$store.commit('screenmuta', e);
+        // console.log(e);
       });
     }
   },

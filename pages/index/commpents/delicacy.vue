@@ -202,14 +202,16 @@
 					nums
 				}
 				sortPages(Data).then(e => {
-					console.log(e);
+					// 将接口的值存储到vuex
+					this.$store.commit('screenmuta', e)
+					// console.log(e);
 				})
-			}
+			},
+
 		},
 		mounted() {
 			this.sortPage()
-		}
-
+		},
 	}
 </script>
 

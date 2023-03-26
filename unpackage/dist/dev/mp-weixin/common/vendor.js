@@ -9604,9 +9604,10 @@ var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ 34));
 _vue.default.use(_vuex.default);
 var _default = new _vuex.default.Store({
   state: {
-    requestLoading: false //加载等待是否显示
+    requestLoading: false,
+    //加载等待是否显示
+    screenarr: []
   },
-
   getters: {},
   mutations: {
     //显示请求加载动画
@@ -9616,6 +9617,10 @@ var _default = new _vuex.default.Store({
     //隐藏请求加载动画
     request_hide_loading: function request_hide_loading(state) {
       state.requestLoading = false;
+    },
+    screenmuta: function screenmuta(state, listdata) {
+      // console.log(listdata);
+      state.screenarr = listdata;
     }
   },
   actions: {},

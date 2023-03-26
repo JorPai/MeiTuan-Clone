@@ -22,6 +22,9 @@
 		shopList
 	} from "@/api/api.js"
 
+	import {
+		mapState
+	} from 'vuex'
 	export default {
 		components: {
 			Search,
@@ -52,6 +55,7 @@
 				shopList().then(e => {
 					// console.log(e);
 					this.delicacyList = e
+					console.log(this.delicacyList);
 				})
 			},
 			pageScorll() {
@@ -72,6 +76,7 @@
 				this.menutop = Math.floor(res[0].top)
 				// console.log(this.menutop);
 				this.topdata = Math.floor(res[0].top)
+				// console.log(this.topdata)
 
 			});
 		},
@@ -93,6 +98,12 @@
 					// console.log('不置顶')
 					this.flag = false
 				}
+			},
+			// 获取state的值
+			...mapState(['screenarr']),
+			// 筛选商家赋值
+			count(){
+				this.delicacyList = this.screenarr
 			}
 		}
 	}

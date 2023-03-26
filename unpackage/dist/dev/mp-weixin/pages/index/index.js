@@ -144,7 +144,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/defineProperty */ 11));
 var _api = __webpack_require__(/*! @/api/api.js */ 41);
+var _vuex = __webpack_require__(/*! vuex */ 34);
 var _components$data$onLo;
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 var Search = function Search() {
   __webpack_require__.e(/*! require.ensure | pages/index/commpents/search */ "pages/index/commpents/search").then((function () {
     return resolve(__webpack_require__(/*! @/pages/index/commpents/search.vue */ 57));
@@ -200,6 +203,7 @@ var _default = (_components$data$onLo = {
       (0, _api.shopList)().then(function (e) {
         // console.log(e);
         _this.delicacyList = e;
+        console.log(_this.delicacyList);
       });
     },
     pageScorll: function pageScorll() {
@@ -220,11 +224,12 @@ var _default = (_components$data$onLo = {
     _this2.menutop = Math.floor(res[0].top);
     // console.log(this.menutop);
     _this2.topdata = Math.floor(res[0].top);
+    // console.log(this.topdata)
   });
 }), (0, _defineProperty2.default)(_components$data$onLo, "onPageScroll", function onPageScroll(e) {
   this.delicacyPage = Math.floor(e.scrollTop);
   // console.log(this.delicacyPage);
-}), (0, _defineProperty2.default)(_components$data$onLo, "computed", {
+}), (0, _defineProperty2.default)(_components$data$onLo, "computed", _objectSpread(_objectSpread({
   // 监听筛选组件置顶和不置顶
   namepage: function namepage() {
     // console.log('我是自动执行的')
@@ -237,7 +242,12 @@ var _default = (_components$data$onLo = {
       this.flag = false;
     }
   }
-}), _components$data$onLo);
+}, (0, _vuex.mapState)(['screenarr'])), {}, {
+  // 筛选商家赋值
+  count: function count() {
+    this.delicacyList = this.screenarr;
+  }
+})), _components$data$onLo);
 exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/wx.js */ 1)["default"]))
 

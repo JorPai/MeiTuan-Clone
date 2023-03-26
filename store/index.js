@@ -5,6 +5,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
 	state:{
 		requestLoading: false, //加载等待是否显示
+		screenarr:[],
 	},
 	getters:{
 		
@@ -18,6 +19,10 @@ export default new Vuex.Store({
 		request_hide_loading(state) {
 			state.requestLoading = false;
 		},
+		screenmuta(state,listdata){
+			// console.log(listdata);
+			state.screenarr = listdata
+		}
 	},
 	actions:{},
 	modules:{}
