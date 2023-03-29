@@ -198,6 +198,7 @@ var _default = {
       screen: '',
       nums: 0,
       subNum: -1,
+      multiobj: {},
       sortlist: [{
         "name": "综合排序",
         "screen": "_id",
@@ -320,24 +321,36 @@ var _default = {
       });
     },
     // 商家特色（多选效果）
-    scollIdx: function scollIdx(indexs) {
+    scollIdx: function scollIdx(indexs, sign) {
       // console.log(this.screendata[0].datas[indexs].id);
       if (this.screendata[0].datas[indexs].id === 1) {
         // 选中
         this.screendata[0].datas[indexs].id = 2;
+        // this.$set给对象添加一个属性
+        this.$set(this.multiobj, sign, sign);
+        // console.log(this.multiobj);
       } else {
         // 未选中
         this.screendata[0].datas[indexs].id = 1;
+        // this.$delete删除对象的一个属性
+        this.$delete(this.multiobj, sign);
+        // console.log(this.multiobj);
       }
     },
     // 人均价单选实现
-    personIdx: function personIdx(indexs) {
+    personIdx: function personIdx(indexs, capita) {
       if (this.subNum == indexs) {
         // 未选中
         this.subNum = -1;
+        // this.$delete删除对象的一个属性
+        this.$delete(this.multiobj, 'capita');
+        // console.log(this.multiobj)
       } else {
         // 选中
         this.subNum = indexs;
+        // this.$set给对象添加一个属性
+        this.$set(this.multiobj, 'capita', capita);
+        // console.log(this.multiobj)
       }
     },
     // 清空选项功能

@@ -34,7 +34,7 @@
 						<view class="scollTittle">{{item.title}}</view>
 						<view class="scollBtn">
 							<block v-for="(itemDatas,indexs) in item.datas" :key="indexs">
-								<view class="scollText" :class="{activBtn:itemDatas.id === 2}" @click="scollIdx(indexs)">{{itemDatas.name}}</view>
+								<view class="scollText" :class="{activBtn:itemDatas.id === 2}" @click="scollIdx(indexs,itemDatas.sign)">{{itemDatas.name}}</view>
 							</block>
 						</view>
 					</view>
@@ -45,7 +45,7 @@
 						<view class="scollTittle">{{item.title}}</view>
 						<view class="scollBtn">
 							<block v-for="(itemDatas,indexs) in item.datas" :key="indexs">
-								<view class="scollText" :class="{activBtn:indexs == subNum}" @click="personIdx(indexs)">{{itemDatas.name}}</view>
+								<view class="scollText" :class="{activBtn:indexs == subNum}" @click="personIdx(indexs,itemDatas.per)">{{itemDatas.name}}</view>
 							</block>
 						</view>
 					</view>
@@ -80,6 +80,7 @@
 				screen: '',
 				nums: 0,
 				subNum:-1,
+				multiobj:{},
 				sortlist: [{
 						"name": "综合排序",
 						"screen": "_id",
@@ -211,24 +212,36 @@
 				})
 			},
 			// 商家特色（多选效果）
-			scollIdx(indexs){
+			scollIdx(indexs,sign){
 				// console.log(this.screendata[0].datas[indexs].id);
 				if(this.screendata[0].datas[indexs].id === 1){
 					// 选中
 					this.screendata[0].datas[indexs].id = 2
+					// this.$set给对象添加一个属性
+					this.$set(this.multiobj,sign,sign)
+					// console.log(this.multiobj);
 				}else{
 					// 未选中
 					this.screendata[0].datas[indexs].id = 1
+					// this.$delete删除对象的一个属性
+					this.$delete(this.multiobj,sign)
+					// console.log(this.multiobj);
 				}
 			},
 			// 人均价单选实现
-			personIdx(indexs){
+			personIdx(indexs,capita){
 				if(this.subNum == indexs){
 					// 未选中
 					this.subNum = -1
+					// this.$delete删除对象的一个属性
+					this.$delete(this.multiobj,'capita')
+					// console.log(this.multiobj)
 				}else{
 					// 选中
 					this.subNum = indexs
+					// this.$set给对象添加一个属性
+					this.$set(this.multiobj,'capita',capita)
+					// console.log(this.multiobj)
 				}
 			},
 			// 清空选项功能
