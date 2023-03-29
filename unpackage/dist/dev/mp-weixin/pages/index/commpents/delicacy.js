@@ -305,6 +305,7 @@ var _default = {
       this.drop = false;
       this.flagList = false;
     },
+    // 综合筛选点击筛选
     sortPage: function sortPage(screen, nums) {
       var _this2 = this;
       var Data = {
@@ -316,6 +317,17 @@ var _default = {
         _this2.$store.commit('screenmuta', e);
         // console.log(e);
       });
+    },
+    // 商家特色（多选效果）
+    scollIdx: function scollIdx(indexs) {
+      // console.log(this.screendata[0].datas[indexs].id);
+      if (this.screendata[0].datas[indexs].id === 1) {
+        // 选中
+        this.screendata[0].datas[indexs].id = 2;
+      } else {
+        // 未选中
+        this.screendata[0].datas[indexs].id = 1;
+      }
     }
   },
   mounted: function mounted() {

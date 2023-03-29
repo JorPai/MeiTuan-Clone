@@ -33,8 +33,8 @@
 					<view>
 						<view class="scollTittle">{{item.title}}</view>
 						<view class="scollBtn">
-							<block v-for="(itemDatas,index) in item.datas" :key="index">
-								<view class="scollText">{{itemDatas.name}}</view>
+							<block v-for="(itemDatas,indexs) in item.datas" :key="indexs">
+								<view class="scollText" :class="{activBtn:itemDatas.id === 2}" @click="scollIdx(indexs)">{{itemDatas.name}}</view>
 							</block>
 						</view>
 					</view>
@@ -196,6 +196,7 @@
 				this.drop = false
 				this.flagList = false
 			},
+			// 综合筛选点击筛选
 			sortPage(screen, nums) {
 				let Data = {
 					screen,
@@ -207,7 +208,17 @@
 					// console.log(e);
 				})
 			},
-
+			// 商家特色（多选效果）
+			scollIdx(indexs){
+				// console.log(this.screendata[0].datas[indexs].id);
+				if(this.screendata[0].datas[indexs].id === 1){
+					// 选中
+					this.screendata[0].datas[indexs].id = 2
+				}else{
+					// 未选中
+					this.screendata[0].datas[indexs].id = 1
+				}
+			}
 		},
 		mounted() {
 			this.sortPage()
