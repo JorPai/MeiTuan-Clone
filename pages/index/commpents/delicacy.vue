@@ -44,8 +44,8 @@
 					<view>
 						<view class="scollTittle">{{item.title}}</view>
 						<view class="scollBtn">
-							<block v-for="(itemDatas,index) in item.datas" :key="index">
-								<view class="scollText">{{itemDatas.name}}</view>
+							<block v-for="(itemDatas,indexs) in item.datas" :key="indexs">
+								<view class="scollText" :class="{activBtn:indexs == subNum}" @click="personIdx(indexs)">{{itemDatas.name}}</view>
 							</block>
 						</view>
 					</view>
@@ -78,6 +78,7 @@
 				flag: true,
 				screen: '',
 				nums: 0,
+				subNum:-1,
 				sortlist: [{
 						"name": "综合排序",
 						"screen": "_id",
@@ -218,7 +219,18 @@
 					// 未选中
 					this.screendata[0].datas[indexs].id = 1
 				}
-			}
+			},
+			// 人均价单选实现
+			personIdx(indexs){
+				if(this.subNum == indexs){
+					// 未选中
+					this.subNum = -1
+				}else{
+					// 选中
+					this.subNum = indexs
+				}
+			},
+			// 清空选项功能
 		},
 		mounted() {
 			this.sortPage()
