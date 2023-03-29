@@ -339,7 +339,22 @@ var _default = {
         // 选中
         this.subNum = indexs;
       }
-    } // 清空选项功能
+    },
+    // 清空选项功能
+    emty: function emty() {
+      // 清空商家特色的选项
+      this.screendata.forEach(function (item) {
+        item.datas.map(function (items) {
+          // console.log(items);
+          items.id = 1;
+          return items;
+        });
+      });
+      // 清空人均单选
+      this.subNum = -1;
+      // 关闭选项区域，返回主菜单
+      this.backClear();
+    }
   },
   mounted: function mounted() {
     this.sortPage();

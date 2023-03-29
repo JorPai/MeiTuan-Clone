@@ -52,7 +52,7 @@
 				</block>
 				<!-- 清空和完成 -->
 				<veiw class="fixBtn">
-					<view class="cleanBtn allBtn">清空</view>
+					<view class="cleanBtn allBtn" @click="emty()">清空</view>
 					<view class="finallyBtn allBtn">完成</view>
 				</veiw>
 			</view>
@@ -65,7 +65,8 @@
 
 <script>
 	import {
-		sortPages
+		sortPages,
+		riceAten
 	} from "@/api/api.js"
 	export default {
 		data() {
@@ -231,6 +232,20 @@
 				}
 			},
 			// 清空选项功能
+			emty(){
+				// 清空商家特色的选项
+				this.screendata.forEach(item => {
+					item.datas.map( items => {
+						// console.log(items);
+						items.id = 1
+						return items
+					})
+				})
+				// 清空人均单选
+				this.subNum = -1
+				// 关闭选项区域，返回主菜单
+				this.backClear()
+			}
 		},
 		mounted() {
 			this.sortPage()

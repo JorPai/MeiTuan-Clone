@@ -12,3 +12,7 @@ export function shopList(){
 export function sortPages(data){
 	return uniRequest('forshop/starting',data,'POST',true)
 }
+// 筛选接口
+export function riceAten(data){
+	return uniRequest('forshop/multiple',data,'POST',true)
+}

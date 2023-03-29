@@ -10905,6 +10905,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.pageIndex = pageIndex;
+exports.riceAten = riceAten;
 exports.shopList = shopList;
 exports.sortPages = sortPages;
 var _uniRequest = __webpack_require__(/*! @/api/uniRequest.js */ 42);
@@ -10919,6 +10920,10 @@ function shopList() {
 // 排序
 function sortPages(data) {
   return (0, _uniRequest.uniRequest)('forshop/starting', data, 'POST', true);
+}
+// 筛选接口
+function riceAten(data) {
+  return (0, _uniRequest.uniRequest)('forshop/multiple', data, 'POST', true);
 }
 
 /***/ }),
