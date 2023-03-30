@@ -81,6 +81,11 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  if (!_vm._isMounted) {
+    _vm.e0 = function ($event) {
+      _vm.comflag && _vm.comPlete()
+    }
+  }
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -189,6 +194,8 @@ var _api = __webpack_require__(/*! @/api/api.js */ 41);
 var _default = {
   data: function data() {
     return {
+      comple: true,
+      comflag: false,
       num: 0,
       sizeName: '综合排序',
       drop: false,
@@ -364,6 +371,8 @@ var _default = {
           return items;
         });
       });
+      // 设置对象为空，是为了避免清楚再点击完成会用户按钮失效
+      this.multiobj = {};
       // 清空人均单选
       this.subNum = -1;
       // 关闭选项区域，返回主菜单
@@ -386,6 +395,21 @@ var _default = {
   mounted: function mounted() {
     this.sortPage();
     // this.comPlete()
+  },
+
+  // 如果用户没有点击任何筛选条件，完成按钮应该被禁用
+  computed: {
+    comEmipy: function comEmipy() {
+      // this.multiobj如果是空对象，禁止点击完成按钮，反之可以点击
+      var obj = JSON.stringify(this.multiobj) == '{}';
+      if (obj == true) {
+        this.comple = true;
+        this.comflag = false;
+      } else {
+        this.comple = false;
+        this.comflag = true;
+      }
+    }
   }
 };
 exports.default = _default;

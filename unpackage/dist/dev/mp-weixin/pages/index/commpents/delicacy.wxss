@@ -5,6 +5,10 @@
   background-color: #fef6df !important;
   color: #f29909 !important;
 }
+.comPlete.data-v-22d20fcb {
+  background-color: #b4b4b4 !important;
+  color: white!important;
+}
 .delicacy.data-v-22d20fcb {
   width: 100%;
   padding: 10rpx 0;

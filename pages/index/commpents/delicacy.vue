@@ -53,7 +53,7 @@
 				<!-- 清空和完成 -->
 				<veiw class="fixBtn">
 					<view class="cleanBtn allBtn" @click="emty()">清空</view>
-					<view class="finallyBtn allBtn" @click="comPlete()">完成</view>
+					<view class="finallyBtn allBtn" @click="comflag && comPlete()" :class="{'comPlete' : comple}">完成</view>
 				</veiw>
 			</view>
 		</view>
@@ -71,6 +71,8 @@
 	export default {
 		data() {
 			return {
+				comple:true,
+				comflag:false,
 				num: 0,
 				sizeName: '综合排序',
 				drop: false,
@@ -256,6 +258,8 @@
 						return items
 					})
 				})
+				// 设置对象为空，是为了避免清楚再点击完成会用户按钮失效
+				this.multiobj = {}
 				// 清空人均单选
 				this.subNum = -1
 				// 关闭选项区域，返回主菜单
@@ -278,6 +282,20 @@
 			this.sortPage()
 			// this.comPlete()
 		},
+		// 如果用户没有点击任何筛选条件，完成按钮应该被禁用
+		computed:{
+			comEmipy(){
+				// this.multiobj如果是空对象，禁止点击完成按钮，反之可以点击
+				let obj = JSON.stringify(this.multiobj) == '{}'
+				if(obj == true){
+					this.comple = true
+					this.comflag = false
+				}else{
+					this.comple = false
+					this.comflag = true
+				}
+			}
+		}
 	}
 </script>
 
@@ -291,7 +309,10 @@
 		color: #f29909 !important;
 	}
 
-
+	.comPlete{
+		background-color: #b4b4b4!important;
+		color: white!important;
+	}
 
 	.delicacy {
 		width: 100%;
