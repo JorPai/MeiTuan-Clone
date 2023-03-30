@@ -116,10 +116,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _EventBus = _interopRequireDefault(__webpack_require__(/*! ../EventBus.js */ 96));
+//
+//
+//
+//
+//
 //
 //
 //
@@ -154,7 +161,27 @@ var _default = {
     delicacyList: Array
   },
   data: function data() {
-    return {};
+    return {
+      flag: true,
+      mulobj: {}
+    };
+  },
+  created: function created() {
+    var _this = this;
+    _EventBus.default.$on('share', function (val) {
+      _this.mulobj = val;
+      console.log(_this.mulobj);
+    });
+  },
+  computed: {
+    deliWatch: function deliWatch() {
+      var sucObj = JSON.stringify(this.mulobj) == '{}';
+      if (sucObj == true) {
+        this.flag = true;
+      } else {
+        this.flag = false;
+      }
+    }
   }
 };
 exports.default = _default;

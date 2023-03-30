@@ -44,4 +44,12 @@
   height: 20rpx;
   margin-right: 8rpx;
 }
+.delicacyList .emipty.data-v-4985330e {
+  height: 260rpx;
+  text-align: center;
+  line-height: 260rpx;
+  font-size: 34rpx;
+  font-style: italic;
+  color: #bababa;
+}
 

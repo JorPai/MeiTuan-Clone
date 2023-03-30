@@ -164,12 +164,12 @@ var Title = function Title() {
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Delicacy = function Delicacy() {
-  __webpack_require__.e(/*! require.ensure | pages/index/commpents/delicacy */ "pages/index/commpents/delicacy").then((function () {
+  Promise.all(/*! require.ensure | pages/index/commpents/delicacy */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/commpents/delicacy")]).then((function () {
     return resolve(__webpack_require__(/*! @/pages/index/commpents/delicacy.vue */ 76));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var Talkout = function Talkout() {
-  __webpack_require__.e(/*! require.ensure | pages/index/commpents/talkout */ "pages/index/commpents/talkout").then((function () {
+  Promise.all(/*! require.ensure | pages/index/commpents/talkout */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/commpents/talkout")]).then((function () {
     return resolve(__webpack_require__(/*! @/pages/index/commpents/talkout.vue */ 83));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };

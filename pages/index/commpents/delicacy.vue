@@ -64,6 +64,7 @@
 </template>
 
 <script>
+	import bus from "../EventBus.js"
 	import {
 		sortPages,
 		riceAten
@@ -273,8 +274,10 @@
 				// console.log(Data);
 				this.backClear()
 				riceAten(this.multiobj).then(e => {
-					// console.log(e);
+					console.log(e);
 					this.$store.commit('screenmuta', e)
+					bus.$emit('share', this.multiobj)
+					console.log(this.multiobj);
 				})
 			}
 		},

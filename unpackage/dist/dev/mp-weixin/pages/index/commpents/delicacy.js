@@ -121,10 +121,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 
 
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _EventBus = _interopRequireDefault(__webpack_require__(/*! ../EventBus.js */ 96));
 var _api = __webpack_require__(/*! @/api/api.js */ 41);
 //
 //
@@ -387,8 +389,10 @@ var _default = {
       // console.log(Data);
       this.backClear();
       (0, _api.riceAten)(this.multiobj).then(function (e) {
-        // console.log(e);
+        console.log(e);
         _this3.$store.commit('screenmuta', e);
+        _EventBus.default.$emit('share', _this3.multiobj);
+        console.log(_this3.multiobj);
       });
     }
   },
