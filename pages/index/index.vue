@@ -6,7 +6,7 @@
 			<Delicacy id="sorllId" :class="{'isFixed' : flag}"></Delicacy>
 		</view>
 		<Talkout :delicacyList='delicacyList'></Talkout>
-		<Title></Title>
+		
 	</view>
 </template>
 

@@ -53,7 +53,7 @@
 				<!-- 清空和完成 -->
 				<veiw class="fixBtn">
 					<view class="cleanBtn allBtn" @click="emty()">清空</view>
-					<view class="finallyBtn allBtn">完成</view>
+					<view class="finallyBtn allBtn" @click="comPlete()">完成</view>
 				</veiw>
 			</view>
 		</view>
@@ -81,6 +81,7 @@
 				nums: 0,
 				subNum:-1,
 				multiobj:{},
+				dataMul:{},
 				sortlist: [{
 						"name": "综合排序",
 						"screen": "_id",
@@ -244,6 +245,7 @@
 					// console.log(this.multiobj)
 				}
 			},
+	
 			// 清空选项功能
 			emty(){
 				// 清空商家特色的选项
@@ -258,10 +260,23 @@
 				this.subNum = -1
 				// 关闭选项区域，返回主菜单
 				this.backClear()
+			},
+			// 完成请求
+			comPlete(){
+				// let Data = {
+				// 	dataMul:this.multiobj
+				// }
+				// console.log(Data);
+				this.backClear()
+				riceAten(this.multiobj).then(e => {
+					// console.log(e);
+					this.$store.commit('screenmuta', e)
+				})
 			}
 		},
 		mounted() {
 			this.sortPage()
+			// this.comPlete()
 		},
 	}
 </script>

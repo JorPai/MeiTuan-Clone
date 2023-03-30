@@ -199,6 +199,7 @@ var _default = {
       nums: 0,
       subNum: -1,
       multiobj: {},
+      dataMul: {},
       sortlist: [{
         "name": "综合排序",
         "screen": "_id",
@@ -367,10 +368,24 @@ var _default = {
       this.subNum = -1;
       // 关闭选项区域，返回主菜单
       this.backClear();
+    },
+    // 完成请求
+    comPlete: function comPlete() {
+      var _this3 = this;
+      // let Data = {
+      // 	dataMul:this.multiobj
+      // }
+      // console.log(Data);
+      this.backClear();
+      (0, _api.riceAten)(this.multiobj).then(function (e) {
+        // console.log(e);
+        _this3.$store.commit('screenmuta', e);
+      });
     }
   },
   mounted: function mounted() {
     this.sortPage();
+    // this.comPlete()
   }
 };
 exports.default = _default;
