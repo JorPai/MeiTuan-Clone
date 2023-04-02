@@ -114,7 +114,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -235,10 +235,17 @@ var _default = {
     swiperDiot: function swiperDiot(e) {
       this.num = e.detail.current;
       // console.log(e.detail.current)
+    },
+    // 跳转到search页面
+    searchNav: function searchNav() {
+      uni.navigateTo({
+        url: '/pages/search/search'
+      });
     }
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

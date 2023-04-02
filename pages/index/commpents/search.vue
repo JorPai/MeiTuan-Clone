@@ -8,7 +8,7 @@
 		</view>
 		<!-- 搜索区域 -->
 		<view class="section-search">
-			<view class="search-top">
+			<view class="search-top" @click="searchNav()">
 				<image src="@/static/coen/sousuo.svg" mode="widthFix"></image>
 				<input type="text" placeholder="麻辣烫" disabled />
 			</view>
@@ -137,6 +137,12 @@
 			swiperDiot(e) {
 				this.num = e.detail.current
 				// console.log(e.detail.current)
+			},
+			// 跳转到search页面
+			searchNav(){
+				uni.navigateTo({
+					url:'/pages/search/search'
+				})
 			}
 		}
 	}

@@ -170,7 +170,7 @@ var Delicacy = function Delicacy() {
 };
 var Talkout = function Talkout() {
   Promise.all(/*! require.ensure | pages/index/commpents/talkout */[__webpack_require__.e("common/vendor"), __webpack_require__.e("pages/index/commpents/talkout")]).then((function () {
-    return resolve(__webpack_require__(/*! @/pages/index/commpents/talkout.vue */ 83));
+    return resolve(__webpack_require__(/*! @/pages/index/commpents/talkout.vue */ 84));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = (_components$data$onLo = {
